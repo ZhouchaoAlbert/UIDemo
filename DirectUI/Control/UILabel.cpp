@@ -186,15 +186,15 @@ namespace DuiLib
 		}
 		else if( _tcscmp(pstrName, _T("valign")) == 0 ) {
 			if( _tcsstr(pstrValue, _T("top")) != NULL ) {
-				m_uTextStyle &= ~(DT_BOTTOM | DT_VCENTER);
+				m_uTextStyle &= ~(DT_BOTTOM | DT_VCENTER | DT_WORDBREAK);
 				m_uTextStyle |= (DT_TOP | DT_SINGLELINE);
 			}
 			if( _tcsstr(pstrValue, _T("vcenter")) != NULL ) {
-				m_uTextStyle &= ~(DT_TOP | DT_BOTTOM );            
+				m_uTextStyle &= ~(DT_TOP | DT_BOTTOM | DT_WORDBREAK);
 				m_uTextStyle |= (DT_VCENTER | DT_SINGLELINE);
 			}
 			if( _tcsstr(pstrValue, _T("bottom")) != NULL ) {
-				m_uTextStyle &= ~(DT_TOP | DT_VCENTER);
+				m_uTextStyle &= ~(DT_TOP | DT_VCENTER | DT_WORDBREAK);
 				m_uTextStyle |= (DT_BOTTOM | DT_SINGLELINE);
 			}
 		}
@@ -203,7 +203,7 @@ namespace DuiLib
 			else m_uTextStyle &= ~DT_END_ELLIPSIS;
 		}    
 		else if( _tcscmp(pstrName, _T("wordbreak")) == 0 ) {
-			if( _tcscmp(pstrValue, _T("true")) == 0 ) {
+			if (_tcscmp(pstrValue, _T("true")) == 0) {
 				m_uTextStyle &= ~DT_SINGLELINE;
 				m_uTextStyle |= DT_WORDBREAK | DT_EDITCONTROL;
 			}
@@ -301,18 +301,18 @@ namespace DuiLib
 			if( IsEnabled() ) {
 				if( m_bShowHtml )
 					CRenderEngine::DrawHtmlText(hDC, m_pManager, rc, m_sText, m_dwTextColor, \
-					NULL, NULL, nLinks, DT_SINGLELINE | m_uTextStyle);
+					NULL, NULL, nLinks, m_uTextStyle);
 				else
 					CRenderEngine::DrawText(hDC, m_pManager, rc, m_sText, m_dwTextColor, \
-					m_iFont, DT_SINGLELINE | m_uTextStyle);
+					m_iFont,  m_uTextStyle);
 			}
 			else {
 				if( m_bShowHtml )
 					CRenderEngine::DrawHtmlText(hDC, m_pManager, rc, m_sText, m_dwDisabledTextColor, \
-					NULL, NULL, nLinks, DT_SINGLELINE | m_uTextStyle);
+					NULL, NULL, nLinks, m_uTextStyle);
 				else
 					CRenderEngine::DrawText(hDC, m_pManager, rc, m_sText, m_dwDisabledTextColor, \
-					m_iFont, DT_SINGLELINE | m_uTextStyle);
+					m_iFont,  m_uTextStyle);
 			}
 		}
 		else

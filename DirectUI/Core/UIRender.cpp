@@ -1299,6 +1299,20 @@ void CRenderEngine::DrawText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCTS
 
 }
 
+void CRenderEngine::DrawText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCTSTR pstrText, DWORD dwTextColor, \
+	int iFont, UINT uStyle, DWORD dwTextBKColor, BOOL bTransparent)
+{
+	if (pstrText == NULL || pManager == NULL) return;
+	if (bTransparent) ::SetBkMode(hDC, TRANSPARENT);
+	else ::SetBkMode(hDC, OPAQUE);
+	::SetBkColor(hDC, RGB(GetBValue(dwTextBKColor), GetGValue(dwTextBKColor), GetRValue(dwTextBKColor)));
+	::SetTextColor(hDC, RGB(GetBValue(dwTextColor), GetGValue(dwTextColor), GetRValue(dwTextColor)));
+	HFONT hOldFont = (HFONT)::SelectObject(hDC, pManager->GetFont(iFont));
+	::DrawText(hDC, pstrText, -1, &rc, uStyle | DT_NOPREFIX);
+	::SelectObject(hDC, hOldFont);
+}
+
+
 void CRenderEngine::DrawHtmlText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCTSTR pstrText, DWORD dwTextColor, RECT* prcLinks, CDuiString* sLinks, int& nLinkRects, UINT uStyle)
 {
     // 考虑到在xml编辑器中使用<>符号不方便，可以使用{}符号代替
