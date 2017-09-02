@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window size="800,572" sizebox="4,4,6,6" roundcorner="0,0" caption="0,0,0,64" bktrans="true" mininfo="400,300" showshadow="true" shadowimage="Material/main/shadow.png" shadowsize="6" shadowcorner="8,8,8,8">
+	<Font name="微软雅黑"   size="13" bold="false" default="true" />
+	<Font name="微软雅黑"   size="12" bold="false" underline="true" />
+	<Font name="微软雅黑"   size="16" bold="false" />
+	<Font name="微软雅黑"   size="13" bold="true" />
+	<Font name="宋体"       size="13" bold="true" />
+	<Default name="VScrollBar" shared="true" value="width=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='Material/common/vscrollbar.png' source='0,60,8,100' corner='0,4,0,4'&quot; thumbhotimage=&quot;file='Material/common/vscrollbar.png' source='8,60,16,100' corner='0,4,0,4'&quot; thumbpushedimage=&quot;file='Material/common/vscrollbar.png' source='16,60,24,100' corner='0,4,0,4'&quot; railnormalimage=&quot;&quot; railhotimage=&quot;&quot; railpushedimage=&quot;&quot; raildisabledimage=&quot;&quot; bknormalimage=&quot;file='Material/common/vscrollbar.png' source='0,0,8,60' corner='0,4,0,4'&quot; bkhotimage=&quot;&quot; bkpushedimage=&quot;&quot; bkdisabledimage=&quot;&quot; "/>
+	<Default name="HScrollBar" shared="true" value="height=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='Material/common/hscrollbar.png' source='0,0,32,8' corner='4,0,4,0'&quot; thumbhotimage=&quot;file='Material/common/hscrollbar.png' source='0,8,32,16' corner='4,0,4,0'&quot; thumbpushedimage=&quot;file='Material/common/hscrollbar.png' source='0,16,32,24' corner='4,0,4,0'&quot; railnormalimage=&quot;&quot; railhotimage=&quot;&quot; railpushedimage=&quot;&quot; raildisabledimage=&quot;&quot; bknormalimage=&quot;file='Material/common/hscrollbar.png' source='0,0,32,8' corner='4,0,4,0'&quot; bkhotimage=&quot;&quot; bkpushedimage=&quot;&quot; bkdisabledimage=&quot;&quot; "/>
+
+	<Default name="Combo"  value="height=&quot;22&quot; textpadding=&quot;4,1,22,1&quot; normalimage=&quot;file='Material\common\combo.png' source='0,0,100,22' corner='2,2,20,2'&quot; hotimage=&quot;file='Material\common\combo.png' source='0,22,100,44' corner='2,2,22,2'&quot; pushedimage=&quot;file='Material\common\combo.png' source='0,44,100,66' corner='2,2,22,2'&quot;" />
+  
+	<VerticalLayout bkcolor="#FFFFFFFF">
+		<!--标题栏-->
+		<HorizontalLayout height ="38" bkcolor="#FFF5F5F5">
+
+			<VerticalLayout inset="14,10,0,0" childpadding="5">
+				<Label text="Duilib开源项目学习" textcolor="#FF4C4C4C" font="2" autocalcwidth="true"  tooltip="duilib开源项目圈"/>
+		
+			</VerticalLayout>
+		</HorizontalLayout>
+		<!--分割条-->
+		<Label name="Separator_line" height="1" bkcolor="#FFE5E5E5"/>
+		
+		<HorizontalLayout>
+			<!--左边Tab选择栏-->
+			<VerticalLayout name="ver_control_mode" width="128" bkcolor="#FFFAFAFA">
+				<!--基本设置-->
+				<HorizontalLayout height="32">
+					<Option name="op_base_control" text="基本控件" textpadding="20,0,0,0" align="left" valign="vcenter" selected="true" group="tab_header" textcolor="#FF000000" hottextcolor="#FF000000" selectedtextcolor="#FFFFFFFF" bkcolor="#FFFAFAFA" hotbkcolor="FFF2F2F2" selectedbkcolor="#FF0FC88D"/>
+				</HorizontalLayout>
+				<!--热键-->
+				<HorizontalLayout height="32">
+					<Option name="op_rich_control" text="高级控件" textpadding="20,0,0,0" align="left" valign="vcenter" group="tab_header" textcolor="#FF000000" hottextcolor="#FF000000" selectedtextcolor="#FFFFFFFF" bkcolor="#FFFAFAFA" hotbkcolor="FFF2F2F2" selectedbkcolor="#FF0FC88D"/>
+				</HorizontalLayout>
+				<!--自动回复-->
+				<HorizontalLayout height="32">
+					<Option name="op_extern_control" text="扩展控件" textpadding="20,0,0,0" align="left" valign="vcenter" group="tab_header" textcolor="#FF000000" hottextcolor="#FF000000" selectedtextcolor="#FFFFFFFF" bkcolor="#FFFAFAFA" hotbkcolor="FFF2F2F2" selectedbkcolor="#FF0FC88D"/>
+				</HorizontalLayout>
+				<!--启动和退出-->
+				<HorizontalLayout height="32">
+					<Option name="op_gif_control" text="动画控件" textpadding="20,0,0,0" align="left" valign="vcenter" group="tab_header" textcolor="#FF000000" hottextcolor="#FF000000" selectedtextcolor="#FFFFFFFF" bkcolor="#FFFAFAFA" hotbkcolor="FFF2F2F2" selectedbkcolor="#FF0FC88D"/>
+				</HorizontalLayout>
+				<HorizontalLayout height="32">
+					<Option name="op_split_control" text="分割控件" textpadding="20,0,0,0" align="left" valign="vcenter" group="tab_header" textcolor="#FF000000" hottextcolor="#FF000000" selectedtextcolor="#FFFFFFFF" bkcolor="#FFFAFAFA" hotbkcolor="FFF2F2F2" selectedbkcolor="#FF0FC88D"/>
+				</HorizontalLayout>
+			</VerticalLayout>
+			<!--分割条-->
+			<Label width="1" bkcolor="#FFE5E5E5"/>
+			<!--右边设置树-->
+			<TabLayout name="tab_right_list">
+					<VerticalLayout name="ver_base_layout" inset="5,10,0,0" vscrollbar="true">
+						<VerticalLayout height ="75" >
+							<Label text="Label控件:"  textcolor="#FF000000" font="0" height="20" width="70"/>
+							<HorizontalLayout height="50" inset="65,5,0,0">
+								<Label  text="Label标签控件自动换行测试" width="80"  wordbreak="true" textcolor="#FFFF0000" />
+		
+						        <GroupBox text="Group控件"  width="200"  height="45"  bkcolor="#FFFFFFFF" textcolor="#FF000000" bordercolor="#FF111111" bordersize="1" borderround="6,6"/>
+        	
+							<!--Button text="Button按钮控件自动换行测试" width="60" align="left" wordbreak="true" textcolor="#FF000000" textpadding="6,0,6,0" style="colorbtn_style"/-->
+							</HorizontalLayout>
+						</VerticalLayout>
+						<Label height="1" bkcolor="#FFE5E5E5"/>
+						<VerticalLayout height ="75">
+							<Label text="Button控件:"  textcolor="#FF000000" font="0" height="20" width="70"/>
+							<HorizontalLayout height="40" inset="65,5,0,0">	
+							  <Button name="button1" text="普通按钮" textcolor="#FF555555" textpadding="6,0,6,0" width="100" normalimage="file='Material\common\button_normal.png' corner='4,4,4,4'" hotimage="file='Material\common\button_hover.png' corner='4,4,4,4'" pushedimage="file='Material\common\button_pushed.png' corner='4,4,4,4'" />
+							  <Control width="10" />
+							  <Button name="button2" text="图标按钮" textcolor="#FF555555" textpadding="20,0,0,0" width="100"  foreimage="file='Material\menu\icon.png' dest='4,10,20,26'" normalimage="file='Material\common\button_normal.png' corner='4,4,4,4'" hotimage="file='Material\common\button_hover.png' corner='4,4,4,4'" pushedimage="file='Material\common\button_pushed.png' corner='4,4,4,4'" />
+							  <Control width="10" />
+							  <Button name="sendbtn" text="命令按钮(&S)" textcolor="#FF555555" shortcut="S" width="100" normalimage="file='Material\common\button_normal.png' corner='4,4,4,4'" hotimage="file='Material\common\button_hover.png' corner='4,4,4,4'" pushedimage="file='Material\common\button_pushed.png' corner='4,4,4,4'"/>
+							  <Control width="10" />
+							  <Button name="sendbtn" text="颜色按钮" colorhsl="true" width="100" textcolor="#FF555555" bkcolor="#FFFF0000" hotbkcolor="#FFFFFF00" pushedbkcolor="#FFFF00FF" borderround="4,4"/>
+							</HorizontalLayout>
+						</VerticalLayout>
+						<Label height="1" bkcolor="#FFE5E5E5"/>
+						<VerticalLayout height ="75">
+							<Label text="Edit控件:"  textcolor="#FF000000" font="0" height="20" width="70"/>
+							<HorizontalLayout height="30" inset="65,5,0,0">	
+								<Edit name="edit1" tipvalue="普通" bkimage="file='Material\common\edit_bk.png' corner='6,6,6,6'" />							
+								<Edit name="edit2" tipvalue="只读" text="只读控件" align="left" readonly="true" bkimage="file='Material\common\edit_bk.png' corner='6,6,6,6'"/>
+								<Edit name="edit3" tipvalue="数字" numberonly="true" bkimage="file='Material\common\edit_bk.png' corner='6,6,6,6'" />
+								<Edit name="edit4" tipvalue="密码" password="true" passwordchar="●" bkimage="file='Material\common\edit_bk.png' corner='6,6,6,6'"/>		
+							</HorizontalLayout>
+						</VerticalLayout>
+						<Label height="1" bkcolor="#FFE5E5E5"/>
+						<VerticalLayout height ="75">
+							<Label text="Combo控件:"  textcolor="#FF000000" font="0" height="20" width="70"/>
+							<HorizontalLayout height="30" inset="65,5,0,0">	
+								<Combo name="font_size" width="120" style="combo_style" itemtextpadding="23,0,0,0">
+									<ListLabelElement text="10" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" selected="true"/>
+									<ListLabelElement text="11" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="12" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="13" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="14" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="15" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="16" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="17" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="18" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="19" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="20" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="21" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="22" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="24" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="28" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+									<ListLabelElement text="32" height="23" bkimage="file='Material\menu\icon.png' dest='4,6,20,22'" />
+								</Combo>
+								<Combo name="font_type" font="0" width="120" textcolor="#FFFF0000" style="combo_style" dropbox="hscrollbar=&quot;true&quot;" >
+									<ListLabelElement text="微软雅黑" selected="true" height="23" />
+									<ListLabelElement text="宋体" height="23" width="500" />
+									<ListLabelElement text="黑体" height="23" width="500" />
+									<ListLabelElement text="幼圆" height="23" width="500" />
+									<ListLabelElement text="楷体" height="23" width="500" />
+								</Combo>								
+							</HorizontalLayout>
+						</VerticalLayout>
+						
+					</VerticalLayout>
+			
+			</TabLayout>
+		</HorizontalLayout>
+		
+	
+		<HorizontalLayout height ="25" inset="10,0,10,0" bkcolor="#FFF5F5F5">
+			<Button name="qqgroup_btn"  text="Duilib交流学习群(654745697)" showhtml="true" tooltip="欢迎加入Duilib交流学习群" width="220" autocalcwidth="true" valign="vcenter" align="left" hottextcolor="#FFFF00FF" font="1" />
+			<Control />
+			<Button name="qq_btn"  text="咨询QQ：1760996050" autocalcwidth="true" valign="vcenter" align="right" textcolor="#FFFF0000" hottextcolor="#FFFF00FF" font="1" tooltip="欢迎添加我QQ为好友" />	  
+		</HorizontalLayout>
+  </VerticalLayout>
+</Window>
